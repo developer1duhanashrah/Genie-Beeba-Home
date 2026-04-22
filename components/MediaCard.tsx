@@ -75,7 +75,9 @@ export default function MediaCard() {
                 className="absolute inset-0 w-full h-full object-cover rounded-[20px] z-10"
                 style={{ display: playing ? 'block' : 'none' }}
                 controls
-                poster="/Vid-Ginie-Beeba-poster.png"
+                poster="/images/video-img.png"
+                muted
+                playsInline
               />
               {/* Poster image if not playing */}
               {!playing && (
