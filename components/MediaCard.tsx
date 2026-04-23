@@ -61,8 +61,8 @@ export default function MediaCard() {
           />
 
           {/* Device-frame card */}
-          <div className="relative overflow-hidden rounded-[28px] bg-[#07100f] p-[10px] shadow-[0_-8px_32px_rgba(0,193,156,0.18)] ring-1 ring-inset ring-white/[0.06]">
-            <div className="relative aspect-video w-full overflow-hidden rounded-[20px] border border-white/[0.07] bg-gradient-to-r from-[#cabfa8] via-[#3f4d4f] to-[#576a67]">
+          <div className="relative overflow-hidden rounded-[28px] bg-[#07100f] p-[8px] ring-1 ring-inset ring-white/[0.32] shadow-[0_-20px_46px_rgba(0,193,156,0.36)]">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[20px] border border-white/[0.22] bg-gradient-to-r from-[#cabfa8] via-[#3f4d4f] to-[#576a67]">
               <div
                 aria-hidden="true"
                 className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.48)_100%)]"

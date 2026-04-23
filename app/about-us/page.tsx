@@ -8,24 +8,17 @@ export const metadata: Metadata = {
 };
 
 /* ─── Orbital diagram constants ──────────────────────────────────────── */
-const S   = 600; // SVG/container size px
-const CX  = 300; // center x
-const CY  = 300; // center y
-const R1  = 258; // outer ring  – icons live here
-const R2  = 186; // middle ring – stars live here
-const R3  = 103; // inner ring  – stars live here
+const S = 600; // SVG/container size px
+const CX = 300; // center x
+const CY = 300; // center y
+const R1 = 188; // outer ring – icons live here
+const R2 = 144; // middle ring
+const R3 = 92; // inner ring
 
 /* Icon positions: angle in degrees, clockwise from 3-o'clock (right) */
 function pos(angleDeg: number, r: number) {
 	const rad = (angleDeg * Math.PI) / 180;
 	return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) };
-}
-
-/* Compute animation-delay so an icon starts at its initial orbit angle */
-const ORBIT_DURATION = 12; // seconds
-function orbitDelay(angleDeg: number) {
-	const normalized = ((angleDeg % 360) + 360) % 360;
-	return -(normalized / 360 * ORBIT_DURATION);
 }
 
 /* ─── Inline SVG icons ──────────────────────────────────────────────── */
@@ -125,25 +118,27 @@ function Badge({ label }: { label: string }) {
 }
 
 /* ─── Orbital Diagram ───────────────────────────────────────────────── */
-// 5 icons evenly spread on the OUTER ring (R1)
+// 5 static icons on the OUTER ring (R1)
 const orbitItems: { icon: React.ReactNode; angle: number }[] = [
-	{ icon: <IconPhone />,    angle: -128 },  // upper-left  (~10 o'clock)
-	{ icon: <IconChart />,    angle:  -52 },  // upper-right (~1  o'clock)
-	{ icon: <IconCalendar />, angle:   58 },  // lower-right (~4  o'clock)
-	{ icon: <IconNodes />,    angle:  118 },  // lower-left  (~7  o'clock)
-	{ icon: <IconPerson />,   angle:  176 },  // left        (~9  o'clock)
+	{ icon: <IconPhone />, angle: -122 },
+	{ icon: <IconChart />, angle: -36 },
+	{ icon: <IconCalendar />, angle: 24 },
+	{ icon: <IconNodes />, angle: 94 },
+	{ icon: <IconPerson />, angle: 170 },
 ];
 
-// 2 sparkle stars on Ring 2 (middle)
-const r2StarAngles = [-90, 36];
-// 2 sparkle stars on Ring 3 (inner)
-const r3StarAngles = [150, -20];
+const staticDots = [
+	{ angle: -95, r: R1, size: 7 },
+	{ angle: 152, r: R1, size: 7 },
+	{ angle: 62, r: R2, size: 7 },
+	{ angle: -24, r: R3, size: 7 },
+];
 
 function OrbitalDiagram() {
 	return (
-		<div className="w-full overflow-hidden h-[330px] sm:h-[450px] lg:h-[600px] flex justify-center">
+		<div className="flex h-[300px] w-full justify-center overflow-hidden sm:h-[430px] lg:h-[600px]">
 			<div
-				className="relative flex-shrink-0 select-none origin-top scale-[0.55] sm:scale-[0.75] lg:scale-100"
+				className="relative flex-shrink-0 origin-top select-none scale-[0.50] sm:scale-[0.72] lg:scale-100"
 				style={{ width: S, height: S }}
 		>
 			{/* ── All rings, dots, spokes and sparkle in one SVG ── */}
@@ -163,43 +158,19 @@ function OrbitalDiagram() {
 				<circle cx={CX} cy={CY} r={R1 + 40} fill="none" />
 
 				{/* ── Ring 1 – outer (icons) ── */}
-				<circle cx={CX} cy={CY} r={R1} fill="none" stroke="rgba(255,255,255,0.32)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R1} fill="none" stroke="rgba(255,255,255,0.42)" strokeWidth="1" />
 
 				{/* ── Ring 2 – middle ── */}
-				<circle cx={CX} cy={CY} r={R2} fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R2} fill="none" stroke="rgba(255,255,255,0.24)" strokeWidth="1" />
 
 				{/* ── Ring 3 – inner hub ring ── */}
-				<circle cx={CX} cy={CY} r={R3} fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R3} fill="none" stroke="rgba(255,255,255,0.20)" strokeWidth="1" />
 
-				{/* ── 2 sparkle stars on Ring 2 – counter-clockwise ── */}
-				<g>
-					<animateTransform attributeName="transform" type="rotate"
-						from={`0 ${CX} ${CY}`} to={`-360 ${CX} ${CY}`}
-						dur="18s" repeatCount="indefinite" />
-					{r2StarAngles.map((angle, i) => {
-						const { x, y } = pos(angle, R2);
-						return (
-							<path key={`r2star-${i}`} transform={`translate(${x - 7},${y - 7})`}
-								d="M7 0 8.2 5.2 14 7 8.2 8.8 7 14 5.8 8.8 0 7 5.8 5.2z"
-								fill="#2de4cf" filter="url(#glow)" />
-						);
-					})}
-				</g>
-
-				{/* ── 2 sparkle stars on Ring 3 – clockwise ── */}
-				<g>
-					<animateTransform attributeName="transform" type="rotate"
-						from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`}
-						dur="10s" repeatCount="indefinite" />
-					{r3StarAngles.map((angle, i) => {
-						const { x, y } = pos(angle, R3);
-						return (
-							<path key={`r3star-${i}`} transform={`translate(${x - 6},${y - 6})`}
-								d="M6 0 7 4.5 12 6 7 7.5 6 12 5 7.5 0 6 5 4.5z"
-								fill="#2de4cf" filter="url(#glow)" />
-						);
-					})}
-				</g>
+				{/* Static teal dots */}
+				{staticDots.map((dot, i) => {
+					const p = pos(dot.angle, dot.r);
+					return <circle key={`dot-${i}`} cx={p.x} cy={p.y} r={dot.size / 2} fill="#2dddc6" />;
+				})}
 				<defs>
 					<filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
 						<feGaussianBlur stdDeviation="4" result="blur" />
@@ -207,25 +178,21 @@ function OrbitalDiagram() {
 					</filter>
 				</defs>
 
-				{/* ── Sparkle star orbiting R1 outer edge ── */}
+				{/* Top sparkle */}
 				{(() => {
-					const { x, y } = pos(-90, R1 + 16);
+					const { x, y } = pos(-78, R1 + 10);
 					return (
-						<g>
-							<animateTransform attributeName="transform" type="rotate"
-								from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`}
-								dur={`${ORBIT_DURATION}s`} repeatCount="indefinite" />
-							<path
-								transform={`translate(${x - 7},${y - 7})`}
-								d="M7 0 8.2 5.2 13 7 8.2 8.8 7 14 5.8 8.8 1 7 5.8 5.2z"
-								fill="#2de4cf" filter="url(#glow)"
-							/>
-						</g>
+						<path
+							transform={`translate(${x - 7},${y - 7})`}
+							d="M7 0 8.2 5.2 13 7 8.2 8.8 7 14 5.8 8.8 1 7 5.8 5.2z"
+							fill="#2de4cf"
+							filter="url(#glow)"
+						/>
 					);
 				})()}
 			</svg>
 
-			{/* ── Icon boxes on Ring 1 – CSS orbit animation ── */}
+			{/* ── Static icon nodes on Ring 1 ── */}
 			{orbitItems.map(({ icon, angle }, i) => (
 				<div
 					key={`icon-${i}`}
@@ -233,14 +200,12 @@ function OrbitalDiagram() {
 					style={{
 						width: 44,
 						height: 44,
-						left: CX - 22,
-						top: CY - 22,
-						transformOrigin: '22px 22px',
-						animation: `orbit-icon-cw ${ORBIT_DURATION}s linear infinite`,
-						animationDelay: `${orbitDelay(angle)}s`,
-						background: "#000000",
-						border: "1px solid rgba(255,255,255,0.30)",
-						borderRadius: 12,
+						left: pos(angle, R1).x - 22,
+						top: pos(angle, R1).y - 22,
+						background: "rgba(36,36,36,0.9)",
+						border: "1px solid rgba(255,255,255,0.16)",
+						borderRadius: 9999,
+						boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
 					}}
 				>
 					{icon}
@@ -251,13 +216,13 @@ function OrbitalDiagram() {
 			<div
 				className="absolute flex flex-col items-center justify-center"
 				style={{
-					width: R3 * 2 - 10,
-					height: R3 * 2 - 10,
-					left: CX - (R3 - 5),
-					top: CY - (R3 - 5),
+					width: R3 * 2 - 28,
+					height: R3 * 2 - 28,
+					left: CX - (R3 - 14),
+					top: CY - (R3 - 14),
 				}}
 			>
-				<Image src="/logo.png" alt="Center Hub Image" width={R3 * 2 - 10} height={R3 * 2 - 10} />
+				<Image src="/logo.png" alt="Center Hub Image" width={138} height={58} className="h-auto w-[138px]" />
 			</div>
 			</div>
 		</div>
