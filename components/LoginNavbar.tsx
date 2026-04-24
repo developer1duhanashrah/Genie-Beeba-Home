@@ -149,6 +149,8 @@ export default function LoginNavbar() {
   const pathname = usePathname();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const navbarRef = useRef<HTMLElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const isAiActive = aiEmployeeDropdown.some(
     (item) => pathname === item.href || pathname.startsWith(`${item.href}/`)
@@ -167,9 +169,47 @@ export default function LoginNavbar() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+    
+    function handleScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollTop = window.scrollY;
+          const scrollThreshold = 100; // 100px scroll threshold
+          
+          setIsSticky(scrollTop >= scrollThreshold);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isSticky) {
+      // Add padding to prevent content jump
+      const navbarHeight = 72; // Height of navbar
+      document.body.style.paddingTop = `${navbarHeight}px`;
+    } else {
+      document.body.style.paddingTop = "0";
+    }
+
+    return () => {
+      document.body.style.paddingTop = "0";
+    };
+  }, [isSticky]);
+
   return (
     <>
-      <header className="relative w-full border-y border-white/10 bg-black">
+      <header className={`w-full border-y border-white/10 bg-black transition-all duration-300 ${
+        isSticky 
+          ? "fixed top-0 left-0 right-0 z-[100] shadow-2xl backdrop-blur-lg bg-black/95 border-b-2 border-[#00C19C]/50" 
+          : "relative"
+      }`}>
         <div className="flex h-[72px] w-full items-center justify-between px-4 sm:px-6 lg:px-25">
           <Link href="/" className="shrink-0">
             <Image
@@ -272,15 +312,15 @@ export default function LoginNavbar() {
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current stroke-2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              </svg> 
             </button>
           </div>
         </div>
 
-        <div
+         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 h-[72px] bg-[radial-gradient(circle_at_center,_rgba(6,188,170,0.30),_transparent_64%)]"
-        />
+        /> 
       </header>
 
       {/* Mobile drawer — child component */}

@@ -12,18 +12,18 @@ export default function RoadMap() {
                         <div className="relative mx-auto max-w-6xl mb-10">
                             <div className="mx-auto flex max-w-xl flex-col items-center text-center">
                                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[11px] text-white/75 backdrop-blur">
-                                    <span className="h-2 w-2 rounded-full bg-[#2de4cf]" />
-                                    Your Autonomous Digital Operators
+                                    <span className="h-3 w-3 rounded-full bg-[#00C19C]" />
+                                    Your Road Map to Autonomous execution
                                 </div>
                                 <h2 className="mt-6 text-balance text-[2.15rem] font-medium leading-[1.12] text-white sm:text-[3.2rem]">
-                                    Meet the team that
+                                    Stop Chasing Tasks
                                     <br />
-                                    never clocks out
+                                    Follow A Clear Path
                                 </h2>
 
                                 <div>
-                            <span className="inline-flex items-center mt-5 p-1 text-xs text-white/70">
-                            Deploying agentic AI should feel simple. We handle the setup and the hard parts, so your business gets a system that runs smoothly. This is not self service. It is built for you, and supported after launch.
+                            <span className="inline-flex items-center mt-5 p-1 text-sm text-white/70">
+                           Our process turns manual work into a bespoke system that runs with autonomous agents. We keep it simple and guided, so you get results without long training or confusion
                             </span>
                         </div>
                             </div>

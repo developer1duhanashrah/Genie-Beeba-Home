@@ -29,7 +29,7 @@ const HowGenieIsDeployed = () => {
 
         {/* Heading */}
         <h2 className="text-[clamp(26px,4.5vw,48px)] font-normal leading-[1.15] tracking-[-0.02em] mx-auto mb-5 max-w-[500px]">
-          How Beeba<br />Is Deployed
+          How Genie<br />Is Deployed
         </h2>
 
         {/* Subtitle */}

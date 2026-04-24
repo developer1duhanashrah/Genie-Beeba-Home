@@ -42,7 +42,7 @@ export default function Cards() {
                         <div className="relative mb-10">
                             <div className="mx-auto flex max-w-xl flex-col items-center text-center">
                                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2 text-[11px] text-white/75 backdrop-blur">
-                                    <span className="h-2 w-2 rounded-full bg-[#2de4cf]" />
+                                    <span className="h-3 w-3 rounded-full bg-[#00C19C]" />
                                     Smart Work, Smooth Execution
                                 </div>
                                 <h2 className="mt-6 text-balance text-[2.15rem] font-medium leading-[1.1] text-white sm:text-[3.2rem]">
@@ -53,7 +53,7 @@ export default function Cards() {
 
                                 <div>
                             <span className="mt-5 inline-flex items-center p-1 text-xs leading-relaxed text-white/65">
-                            Deploying agentic AI should feel simple. We handle the setup and the hard parts, so your business gets a system that runs smoothly. This is not self service. It is built for you, and supported after launch.
+                            Deploying agentic AI should feel simple. We handle the setup and the hard parts, so your business gets a system that runs smoothly. This is not self service. It is built for you, and supported after launch
                             </span>
                         </div>
                             </div>
@@ -65,9 +65,9 @@ export default function Cards() {
 				{items.map((item) => (
 					<article
 						key={item.title}
-						className="group relative overflow-hidden rounded-[22px] ring-1 ring-white/10 bg-[linear-gradient(180deg,#4ab4a2_0%,#1d4a43_42%,#07110f_75%,#020707_100%)] shadow-[0_10px_24px_rgba(0,0,0,0.32)]"
+						className="group relative overflow-hidden rounded-t-[22px] border-t  border-white/12 "
 					>
-						<div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden">
+						<div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] overflow-hidden bg-[linear-gradient(180deg,#4ea996_0%,#2e6c62_36%,#123029_62%,#071513_82%,#040808_100%)] shadow-[0_10px_24px_rgba(0,0,0,0.32)]">
 							<Image
 								src={item.image}
 								alt={item.title}
@@ -81,9 +81,9 @@ export default function Cards() {
 							/>
 						</div>
 
-						<div className="border-t border-black/40 px-5 pb-6 pt-5 text-center">
-							<h3 className="text-[2rem] font-semibold leading-none tracking-[-0.02em] text-white">{item.title}</h3>
-							<p className="mt-3 text-[0.78rem] leading-[1.35] text-white/55">{item.description}</p>
+						<div className=" px-5 pb-6 pt-5 text-center">
+							<h3 className="text-[2.1rem] font-semibold leading-none tracking-[-0.02em] text-white">{item.title}</h3>
+							<p className="mt-3 text-[0.78rem] leading-[1.42] text-white/50">{item.description}</p>
 						</div>
 					</article>
 				))}

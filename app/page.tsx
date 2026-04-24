@@ -27,8 +27,8 @@ export default function Home() {
         <RoadMap />
         <Operations />
         <Bookings />
-        <FrequentlyQuestions />
         <FeedBack />
+         <FrequentlyQuestions />
         <MettingForm />
       
       </div>

@@ -38,13 +38,13 @@ export default function Bookings() {
 	return (
 		<section className="bg-black px-4 sm:px-6 lg:px-20 lg:mx-10 py-8 sm:px-6 sm:py-10">
 			<div className="">
-				<div className="relative min-h-[158px] overflow-hidden rounded-[16px] border border-white/[0.08] bg-[#183630] shadow-[0_18px_40px_rgba(0,0,0,0.34)]">
+				<div className="relative min-h-[158px] overflow-hidden rounded-[16px] border border-white/[0.12] bg-gradient-to-r from-[#0a7a6f] via-[#1ba89a] to-[#0a7a6f] shadow-[0_20px_50px_rgba(27,168,154,0.3)]">
 					<div
 						aria-hidden="true"
 						className="absolute inset-0"
 						style={{
 							background:
-								"linear-gradient(90deg, #17352F 0%, #3C8F84 16%, #79E5D6 50%, #3C8F84 84%, #17352F 100%)",
+								"linear-gradient(90deg, #0d6b61 0%, #2db8a8 15%, #5ce8d3 50%, #2db8a8 85%, #0d6b61 100%)",
 						}}
 					/>
 					<div
@@ -52,7 +52,7 @@ export default function Bookings() {
 						className="absolute inset-0"
 						style={{
 							background:
-								"radial-gradient(42% 120% at 50% -8%, rgba(243,255,252,0.9) 0%, rgba(243,255,252,0.22) 18%, rgba(255,255,255,0) 58%), linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.05) 32%, rgba(0,0,0,0.2) 100%)",
+								"radial-gradient(45% 130% at 50% -10%, rgba(92,232,211,0.35) 0%, rgba(92,232,211,0.1) 20%, rgba(255,255,255,0) 60%), linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.02) 35%, rgba(0,0,0,0.15) 100%)",
 						}}
 					/>
 					<div
@@ -76,7 +76,7 @@ export default function Bookings() {
 						<h2 className="max-w-[430px] text-[18px] font-semibold leading-none tracking-[-0.03em] text-white sm:text-[20px]">
 							Stop Spending Time on Repeat Tasks
 						</h2>
-						<p className="mt-4 max-w-[348px] text-[10px] font-medium leading-[1.45] tracking-[0.01em] text-white/88 sm:text-[10.5px]">
+						<p className="mt-4 max-w-[348px] text-[10px] font-medium leading-[1.45] tracking-[0.01em] text-white/95 sm:text-[10.5px]">
 							Let agentic AI handle the routine work, so you can
 							<br className="hidden sm:block" />
 							 focus on clients and strategy.

@@ -40,9 +40,12 @@ export default function MettingForm() {
 								className="flex h-[50px] w-full items-center justify-center gap-2 rounded-full bg-[#11c7a3] text-[18px] font-semibold text-white transition hover:bg-[#10b996]"
 							>
 								Schedule a Meeting
-								<span aria-hidden="true" className="text-[18px] leading-none">
-									→
-								</span>
+								<span className="inline-flex h-7 w-9 items-center justify-center rounded-full bg-transparent text-white">
+								<svg viewBox="0 0 20 20" className="h-7 w-9 fill-none stroke-current stroke-[2]" aria-hidden="true">
+									<path d="M4 10H16" />
+									<path d="M11 5L16 10L11 15" />
+								</svg>
+							</span>
 							</button>
 						</form>
 					</div>

@@ -172,7 +172,7 @@ export default function FeedBack() {
 
 			<div className="relative mx-auto flex flex-col items-center px-4 text-center">
 				<div className="inline-flex h-10 items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 text-[11px] font-medium text-white/72 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-					<span className="h-2.5 w-2.5 rounded-full bg-[#17c9b0] shadow-[0_0_0_4px_rgba(23,201,176,0.12)]" />
+					<span className="h-3 w-3 rounded-full bg-[#00C19C] shadow-[0_0_0_4px_rgba(0,193,156,0.12)]" />
 					Trusted by Our Clients
 				</div>
 

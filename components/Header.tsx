@@ -46,8 +46,8 @@ export default function Header() {
 
 				<div className="mx-auto flex max-w-5xl flex-col items-center text-center">
 					<div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-medium tracking-[0.01em] text-white/80 backdrop-blur">
-						<span className="badge-dot h-2 w-2 rounded-full bg-[#2dddc6]" />
-						Your Operations Autonomously Executed
+						<span className="badge-dot h-3 w-3 rounded-full bg-[#00C19C]" />
+						<span className="text-[14px]">Your Operations Autonomously Executed </span>
 					</div>
 
 					<h1 className="mt-8 max-w-4xl text-balance text-[1.7rem] font-medium leading-[1.12] tracking-[-0.03em] text-white sm:text-[2.8rem] lg:text-[3.95rem]">

@@ -29,11 +29,11 @@ export default function Beeba() {
 							</button>
 						</div>
 
-					<h3 className="mt-6 text-[1.8rem] sm:text-[2.35rem] font-semibold tracking-[0.02em] text-[#10d7c2]">BEEBA</h3>
+					<h3 className="mt-6 text-[1.8rem] sm:text-[2.35rem] font-semibold tracking-[0.02em] text-[#00C19C]">BEEBA</h3>
 					<p className="mt-4 max-w-xl text-[0.92rem] sm:text-[1.07rem] leading-[1.75] text-white/78">
 							Move from the content grind to a fully autonomous operation. Our Autonomous Agent
 							Beeba executes everything from deep market analysis and strategic planning to content
-							creation and multi-platform scheduling, all tailored to your unique brand voice.
+							creation and multi-platform scheduling, all tailored to your unique brand voice
 						</p>
 
 						<button

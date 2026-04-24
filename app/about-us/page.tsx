@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 };
 
 /* ─── Orbital diagram constants ──────────────────────────────────────── */
-const S = 600; // SVG/container size px
-const CX = 300; // center x
-const CY = 300; // center y
-const R1 = 188; // outer ring – icons live here
-const R2 = 144; // middle ring
-const R3 = 92; // inner ring
+const S   = 600; // SVG/container size px
+const CX  = 300; // center x
+const CY  = 300; // center y
+const R1  = 258; // outer ring  – icons live here
+const R2  = 186; // middle ring – stars live here
+const R3  = 103; // inner ring  – stars live here
 
 /* Icon positions: angle in degrees, clockwise from 3-o'clock (right) */
 function pos(angleDeg: number, r: number) {
@@ -21,17 +21,24 @@ function pos(angleDeg: number, r: number) {
 	return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) };
 }
 
+/* Compute animation-delay so an icon starts at its initial orbit angle */
+const ORBIT_DURATION = 12; // seconds
+function orbitDelay(angleDeg: number) {
+	const normalized = ((angleDeg % 360) + 360) % 360;
+	return -(normalized / 360 * ORBIT_DURATION);
+}
+
 /* ─── Inline SVG icons ──────────────────────────────────────────────── */
 function IconPhone() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[17px] w-[17px]">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[35px] w-[35px]">
 			<path strokeLinecap="round" strokeLinejoin="round" d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.28-.28.7-.37 1.07-.25A11.5 11.5 0 0020 17.5a1 1 0 011 1V21a1 1 0 01-1 1C9.6 22 2 14.4 2 5a1 1 0 011-1h3.5a1 1 0 011 1 11.5 11.5 0 00.6 3.57 1 1 0 01-.25 1L6.6 10.8z" />
 		</svg>
 	);
 }
 function IconChart() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[17px] w-[17px]">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[35px] w-[35px]">
 			<rect x="3" y="12" width="4" height="9" rx="0.5" />
 			<rect x="10" y="7" width="4" height="14" rx="0.5" />
 			<rect x="17" y="3" width="4" height="18" rx="0.5" />
@@ -40,7 +47,7 @@ function IconChart() {
 }
 function IconCalendar() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[17px] w-[17px]">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[35px] w-[35px]">
 			<rect x="3" y="4" width="18" height="18" rx="2" />
 			<path strokeLinecap="round" d="M16 2v4M8 2v4M3 10h18" />
 		</svg>
@@ -48,7 +55,7 @@ function IconCalendar() {
 }
 function IconNodes() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[17px] w-[17px]">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[35px] w-[35px]">
 			<circle cx="6" cy="18" r="2" />
 			<circle cx="18" cy="18" r="2" />
 			<circle cx="12" cy="6" r="2" />
@@ -58,7 +65,7 @@ function IconNodes() {
 }
 function IconPerson() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[17px] w-[17px]">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-[35px] w-[35px]">
 			<circle cx="12" cy="7" r="4" />
 			<path strokeLinecap="round" d="M4 21v-1a8 8 0 0116 0v1" />
 		</svg>
@@ -84,7 +91,7 @@ function IconEye() {
 }
 function IconCpu() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-15 w-15">
 			<rect x="7" y="7" width="10" height="10" rx="1" />
 			<path strokeLinecap="round" d="M9 4v3M12 4v3M15 4v3M9 17v3M12 17v3M15 17v3M4 9h3M4 12h3M4 15h3M17 9h3M17 12h3M17 15h3" />
 		</svg>
@@ -92,7 +99,7 @@ function IconCpu() {
 }
 function IconTeam() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-12 w-12">
 			<circle cx="9" cy="7" r="3.5" />
 			<circle cx="17" cy="7" r="3.5" />
 			<path strokeLinecap="round" d="M2 22v-1a7 7 0 0114 0v1M14 22v-1a7 7 0 0110 0v1" />
@@ -101,7 +108,7 @@ function IconTeam() {
 }
 function IconBolt() {
 	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-5 w-5">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="h-15 w-15">
 			<path strokeLinecap="round" strokeLinejoin="round" d="M13 2L4.5 13.5H12L11 22l8.5-11.5H12L13 2z" />
 		</svg>
 	);
@@ -118,27 +125,25 @@ function Badge({ label }: { label: string }) {
 }
 
 /* ─── Orbital Diagram ───────────────────────────────────────────────── */
-// 5 static icons on the OUTER ring (R1)
+// 5 icons evenly spread on the OUTER ring (R1)
 const orbitItems: { icon: React.ReactNode; angle: number }[] = [
-	{ icon: <IconPhone />, angle: -122 },
-	{ icon: <IconChart />, angle: -36 },
-	{ icon: <IconCalendar />, angle: 24 },
-	{ icon: <IconNodes />, angle: 94 },
-	{ icon: <IconPerson />, angle: 170 },
+	{ icon: <IconPhone />,    angle: -128 },  // upper-left  (~10 o'clock)
+	{ icon: <IconChart />,    angle:  -52 },  // upper-right (~1  o'clock)
+	{ icon: <IconCalendar />, angle:   58 },  // lower-right (~4  o'clock)
+	{ icon: <IconNodes />,    angle:  118 },  // lower-left  (~7  o'clock)
+	{ icon: <IconPerson />,   angle:  176 },  // left        (~9  o'clock)
 ];
 
-const staticDots = [
-	{ angle: -95, r: R1, size: 7 },
-	{ angle: 152, r: R1, size: 7 },
-	{ angle: 62, r: R2, size: 7 },
-	{ angle: -24, r: R3, size: 7 },
-];
+// 2 sparkle stars on Ring 2 (middle)
+const r2StarAngles = [-90, 36];
+// 2 sparkle stars on Ring 3 (inner)
+const r3StarAngles = [150, -20];
 
 function OrbitalDiagram() {
 	return (
-		<div className="flex h-[300px] w-full justify-center overflow-hidden sm:h-[430px] lg:h-[600px]">
+		<div className="w-full overflow-hidden h-[330px] sm:h-[450px] lg:h-[600px] flex justify-center">
 			<div
-				className="relative flex-shrink-0 origin-top select-none scale-[0.50] sm:scale-[0.72] lg:scale-100"
+				className="relative flex-shrink-0 select-none origin-top scale-[0.55] sm:scale-[0.75] lg:scale-100"
 				style={{ width: S, height: S }}
 		>
 			{/* ── All rings, dots, spokes and sparkle in one SVG ── */}
@@ -158,19 +163,43 @@ function OrbitalDiagram() {
 				<circle cx={CX} cy={CY} r={R1 + 40} fill="none" />
 
 				{/* ── Ring 1 – outer (icons) ── */}
-				<circle cx={CX} cy={CY} r={R1} fill="none" stroke="rgba(255,255,255,0.42)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R1} fill="none" stroke="rgba(255,255,255,0.32)" strokeWidth="1" />
 
 				{/* ── Ring 2 – middle ── */}
-				<circle cx={CX} cy={CY} r={R2} fill="none" stroke="rgba(255,255,255,0.24)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R2} fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1" />
 
 				{/* ── Ring 3 – inner hub ring ── */}
-				<circle cx={CX} cy={CY} r={R3} fill="none" stroke="rgba(255,255,255,0.20)" strokeWidth="1" />
+				<circle cx={CX} cy={CY} r={R3} fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
 
-				{/* Static teal dots */}
-				{staticDots.map((dot, i) => {
-					const p = pos(dot.angle, dot.r);
-					return <circle key={`dot-${i}`} cx={p.x} cy={p.y} r={dot.size / 2} fill="#2dddc6" />;
-				})}
+				{/* ── 2 sparkle stars on Ring 2 – counter-clockwise ── */}
+				<g>
+					<animateTransform attributeName="transform" type="rotate"
+						from={`0 ${CX} ${CY}`} to={`-360 ${CX} ${CY}`}
+						dur="18s" repeatCount="indefinite" />
+					{r2StarAngles.map((angle, i) => {
+						const { x, y } = pos(angle, R2);
+						return (
+							<path key={`r2star-${i}`} transform={`translate(${x - 7},${y - 7})`}
+								d="M7 0 8.2 5.2 14 7 8.2 8.8 7 14 5.8 8.8 0 7 5.8 5.2z"
+								fill="#2de4cf" filter="url(#glow)" />
+						);
+					})}
+				</g>
+
+				{/* ── 2 sparkle stars on Ring 3 – clockwise ── */}
+				<g>
+					<animateTransform attributeName="transform" type="rotate"
+						from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`}
+						dur="10s" repeatCount="indefinite" />
+					{r3StarAngles.map((angle, i) => {
+						const { x, y } = pos(angle, R3);
+						return (
+							<path key={`r3star-${i}`} transform={`translate(${x - 6},${y - 6})`}
+								d="M6 0 7 4.5 12 6 7 7.5 6 12 5 7.5 0 6 5 4.5z"
+								fill="#2de4cf" filter="url(#glow)" />
+						);
+					})}
+				</g>
 				<defs>
 					<filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
 						<feGaussianBlur stdDeviation="4" result="blur" />
@@ -178,34 +207,40 @@ function OrbitalDiagram() {
 					</filter>
 				</defs>
 
-				{/* Top sparkle */}
+				{/* ── Sparkle star orbiting R1 outer edge ── */}
 				{(() => {
-					const { x, y } = pos(-78, R1 + 10);
+					const { x, y } = pos(-90, R1);
 					return (
-						<path
-							transform={`translate(${x - 7},${y - 7})`}
-							d="M7 0 8.2 5.2 13 7 8.2 8.8 7 14 5.8 8.8 1 7 5.8 5.2z"
-							fill="#2de4cf"
-							filter="url(#glow)"
-						/>
+						<g>
+							<animateTransform attributeName="transform" type="rotate"
+								from={`0 ${CX} ${CY}`} to={`360 ${CX} ${CY}`}
+								dur={`${ORBIT_DURATION}s`} repeatCount="indefinite" />
+							<path
+								transform={`translate(${x - 7},${y - 7})`}
+								d="M7 0 8.2 5.2 13 7 8.2 8.8 7 14 5.8 8.8 1 7 5.8 5.2z"
+								fill="#2de4cf" filter="url(#glow)"
+							/>
+						</g>
 					);
 				})()}
 			</svg>
 
-			{/* ── Static icon nodes on Ring 1 ── */}
+			{/* ── Icon boxes on Ring 1 – CSS orbit animation ── */}
 			{orbitItems.map(({ icon, angle }, i) => (
 				<div
 					key={`icon-${i}`}
 					className="absolute flex items-center justify-center text-white/90"
 					style={{
-						width: 44,
-						height: 44,
-						left: pos(angle, R1).x - 22,
-						top: pos(angle, R1).y - 22,
-						background: "rgba(36,36,36,0.9)",
-						border: "1px solid rgba(255,255,255,0.16)",
-						borderRadius: 9999,
-						boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)",
+						width: 65,
+						height: 65,
+						left: CX - 22,
+						top: CY - 22,
+						transformOrigin: '22px 22px',
+						animation: `orbit-icon-cw ${ORBIT_DURATION}s linear infinite`,
+						animationDelay: `${orbitDelay(angle)}s`,
+						background: "#000000",
+						border: "1px solid rgba(255,255,255,0.30)",
+						borderRadius: 12,
 					}}
 				>
 					{icon}
@@ -216,13 +251,13 @@ function OrbitalDiagram() {
 			<div
 				className="absolute flex flex-col items-center justify-center"
 				style={{
-					width: R3 * 2 - 28,
-					height: R3 * 2 - 28,
-					left: CX - (R3 - 14),
-					top: CY - (R3 - 14),
+					width: R3 * 2 - 5,
+					height: R3 * 2 - 5,
+					left: CX - (R3 - 5),
+					top: CY - (R3 - 5),
 				}}
 			>
-				<Image src="/logo.png" alt="Center Hub Image" width={138} height={58} className="h-auto w-[138px]" />
+				<Image src="/logo.png" alt="Center Hub Image" width={R3 * 2 - 20} height={R3 * 2 - 20} />
 			</div>
 			</div>
 		</div>
@@ -279,11 +314,11 @@ export default function AboutPage() {
 			</section>
 
 			{/* ══ 2. OUR PHILOSOPHY ════════════════════════════════════════ */}
-		<section className="relative overflow-hidden bg-black py-5 px-4 sm:px-6 lg:px-25">
+		<section className="relative overflow-hidden bg-black py-5 px-4 sm:px-6 lg:px-30">
 			<div className="mx-auto flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
 					{/* Text */}
 					<div className="flex-1">
-						<h2 className="text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.024em] text-[#2de4cf] sm:text-[2.9rem]">
+						<h2 className="text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.024em] text-[#00C19C] sm:text-[2.9rem]">
 							Our Philosophy
 						</h2>
 						<div className="mt-7 space-y-5 text-[14px] leading-[1.85] text-white/70 sm:text-[15px]">
@@ -314,7 +349,7 @@ export default function AboutPage() {
 			</section>
 
 			{/* ══ 3. MISSION & VISION ══════════════════════════════════════ */}
-		<section className="relative overflow-hidden bg-black py-10 px-4 sm:px-6 lg:px-25">
+		<section className="relative overflow-hidden bg-black py-10 px-4 sm:px-6 lg:px-30">
 				<div
 					aria-hidden="true"
 					className="pointer-events-none absolute inset-0 -z-10"
@@ -344,39 +379,36 @@ export default function AboutPage() {
 				<div className="mt-12 grid gap-5 sm:grid-cols-2">
 					{[
 						{
-							icon: <IconTarget />,
+							icon: "/target-icon.png",
 							title: "Our Mission",
-							body: "To Solve The Manpower Gap By Deploying An Autonomous Digital Workforce That Turns Business Pressure Into Steady, Reliable Execution.",
+							body: "To Solve The Manpower Gap By Deploying An Autonomous Digital Workforce That Turns Business Pressure Into Steady, Reliable Execution",
 						},
 						{
-							icon: <IconEye />,
+							icon: "/vision-icon.png",
 							title: "Our Vision",
-							body: "To Help Entrepreneurs Grow Without Carrying Everything Alone, By Making Scalable Agentic AI Simple To Use And Ready To Deploy.",
+							body: "To Help Entrepreneurs Grow Without Carrying Everything Alone, By Making Scalable Agentic AI Simple To Use And Ready To Deploy",
 						},
 					].map((card) => (
 						<article
 							key={card.title}
 							className=" rounded-[18px] px-7 py-8"
 							style={{
-								background: "linear-gradient(160deg, #0e1a18 0%, #0d1117 100%)",
+								background: "linear-gradient(180deg, rgba(13,107,97,0.20) 0%, #0a0a0a 35%, #0a0a0a 100%), linear-gradient(to left, rgba(27,168,154,0.15) 0%, transparent 40%)",
 								border: "1px solid rgba(45,228,207,0.14)",
 								boxShadow:
-									"0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(45,228,207,0.06)",
+									"inset -20px 0 40px rgba(27,168,154,0.08), 0 8px 32px rgba(0,0,0,0.45)",
 							}}
 						>
 							<div className="flex items-center gap-3">
-								<div
-									className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-[#2de4cf]"
-									style={{
-										background: "rgba(45,228,207,0.08)",
-										border: "1px solid rgba(45,228,207,0.25)",
-									}}
+								 <div
+									className="flex h-25 w-25 flex-shrink-0 items-center justify-center rounded-full text-[#2de4cf]"
+									
 								>
-									{card.icon}
-								</div>
+									<Image src={card.icon} alt={`${card.title} Icon`} width={55} height={55} />
+								</div> 
 								<h3 className="text-[18px] font-semibold text-white">{card.title}</h3>
 							</div>
-							<p className="mt-5 text-[13px] leading-[1.8] text-white/55">
+							<p className="mt-5 text-[15px] leading-[1.8] text-white">
 								{card.body}
 							</p>
 						</article>
@@ -385,7 +417,7 @@ export default function AboutPage() {
 			</section>
 
 			{/* ══ 4. WHAT MAKES US DIFFERENT ═══════════════════════════════ */}
-		<section className="relative overflow-hidden px-4 py-16 sm:py-24 sm:px-6 lg:px-25">
+		<section className="relative overflow-hidden px-4 py-16 sm:py-24 sm:px-6 lg:px-30 ">
 				<div
 					aria-hidden="true"
 					className="pointer-events-none absolute inset-0 -z-10"
@@ -395,7 +427,7 @@ export default function AboutPage() {
 					}}
 				/>
 
-				<div className="mx-auto flex max-w-[860px] flex-col items-center text-center">
+				<div className="mx-auto flex max-w-[860px] flex-col items-center text-center ">
 					<Badge label="Intelligence That Drives Simplicity" />
 
 					<h2 className="mt-7 text-[2.05rem] font-medium leading-[1.11] tracking-[-0.025em] text-white sm:text-[3.2rem]">
@@ -411,7 +443,7 @@ export default function AboutPage() {
 				</div>
 
 				{/* 3-column cards */}
-				<div className="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="mx-auto mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ">
 					{[
 						{
 							icon: <IconCpu />,
@@ -431,30 +463,27 @@ export default function AboutPage() {
 					].map((card) => (
 						<article
 							key={card.title}
-							className="relative overflow-hidden rounded-[18px] px-6 py-8"
+							className="relative overflow-hidden rounded-[18px] px-6 py-8 "
 							style={{
-								background: "#0d1117",
-								border: "1px solid rgba(255,255,255,0.08)",
+								background: "linear-gradient(180deg, rgba(13,107,97,0.20) 0%, #0a0a0a 35%, #0a0a0a 100%), linear-gradient(to left, rgba(27,168,154,0.15) 0%, transparent 40%)",
+								border: "1px solid rgba(27,168,154,0.30)",
 								boxShadow:
-									"0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04)",
+									"inset -20px 0 40px rgba(27,168,154,0.08), 0 12px 40px rgba(27,168,154,0.1)",
 							}}
 						>
 							{/* Subtle teal top glow on card */}
 							<div
 								aria-hidden="true"
-								className="pointer-events-none absolute inset-0"
-								style={{
-									background:
-										"radial-gradient(110% 80% at 50% 0%, rgba(13,198,161,0.07) 0%, transparent 55%)",
-								}}
+								className="pointer-events-none absolute inset-0 "
+								
 							/>
-							<div className="relative z-10">
+							<div className="relative z-10 ">
 								<div className="flex items-center gap-3">
 									<div
-										className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[10px] text-white/65"
+										className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full text-white/70"
 										style={{
-											background: "rgba(255,255,255,0.04)",
-											border: "1px solid rgba(255,255,255,0.10)",
+											background: "rgba(30,80,75,0.30)",
+											border: "1px solid rgba(45,228,207,0.28)",
 										}}
 									>
 										{card.icon}
@@ -463,9 +492,10 @@ export default function AboutPage() {
 										{card.title}
 									</h3>
 								</div>
-								<p className="mt-5 text-[12.5px] leading-[1.85] text-white/48">
+								<p className="mt-5 text-[16.5px] leading-[1.85] text-white/65 " >
 									{card.body}
 								</p>
+								
 							</div>
 						</article>
 					))}

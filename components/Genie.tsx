@@ -12,7 +12,7 @@ export default function Genie() {
 				{/* Section heading */}
 				<div className="mx-auto flex max-w-xl flex-col items-center text-center">
 					<div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[11px] text-white/75 backdrop-blur">
-						<span className="h-2 w-2 rounded-full bg-[#2de4cf]" />
+						<span className="h-3 w-3 rounded-full bg-[#00C19C]" />
 						Your Autonomous Digital Operators
 					</div>
 					<h2 className="mt-6 text-balance text-[1.8rem] font-medium leading-[1.12] text-white sm:text-[3.2rem]">
@@ -35,12 +35,12 @@ export default function Genie() {
 							</button>
 						</div>
 
-						<h3 className="mt-6 text-[1.8rem] sm:text-[2.35rem] font-semibold tracking-[0.02em] text-[#10d7c2]">GENIE</h3>
+						<h3 className="mt-6 text-[1.8rem] sm:text-[2.35rem] font-semibold tracking-[0.02em] text-[#00C19C]">GENIE</h3>
 						<p className="mt-4 max-w-xl text-[0.92rem] sm:text-[1.07rem] leading-[1.75] text-white/78">
 							Genie, provides a human-like voice to independently handle unlimited calls, 24/7. It
 							excels at autonomous lead qualification, appointment scheduling, and customer support,
 							integrating directly with your CRM to ensure every opportunity is captured, even while
-							you are away.
+							you are away
 						</p>
 
 						<button
