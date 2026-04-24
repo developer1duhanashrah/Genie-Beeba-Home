@@ -151,7 +151,8 @@ export default function Footer() {
 				 <div className="mt-10 flex flex-col gap-3 text-[12px] sm:text-[13px] text-white/60 sm:flex-row sm:items-end sm:justify-between px-5">
 					<p>Copyright © 2026 DNAI / Powered by NIKU SOLUTION PTE LTD</p>
 					<div className="flex flex-wrap gap-1.5 sm:gap-2 text-white/70 sm:justify-end">
-						{policyLinks.map((link, index) => (
+						{policyLinks.map((link, index) => ( 
+							
 							<div key={link.label} className="flex items-center gap-1">
 								<Link href={link.href} className="transition-colors hover:text-white/90">
 									{link.label}
