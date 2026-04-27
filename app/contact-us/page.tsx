@@ -48,9 +48,9 @@ export default function ContactPage() {
       `}</style>
       <section className="relative isolate overflow-hidden px-4 pb-20 pt-14 sm:px-6 sm:pt-20 lg:px-8">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_7%,rgba(0,207,177,0.28)_0%,rgba(0,207,177,0.12)_26%,rgba(0,207,177,0.03)_48%,rgba(4,7,8,1)_68%)]" />
-          <div className="absolute left-1/2 top-[150px] h-[280px] w-[860px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(0,224,190,0.16)_0%,rgba(0,224,190,0)_72%)] blur-3xl" />
-          <div className="absolute inset-x-0 top-0 h-[280px] [background-image:linear-gradient(to_right,rgba(33,63,62,0.28)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.22)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_60%_72%_at_50%_0%,black_44%,transparent_92%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_6%,rgba(0,207,177,0.34)_0%,rgba(0,207,177,0.12)_25%,rgba(0,207,177,0.04)_44%,rgba(4,7,8,1)_70%)]" />
+          <div className="absolute left-1/2 top-[150px] h-[320px] w-[920px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(0,224,190,0.20)_0%,rgba(0,224,190,0)_72%)] blur-3xl" />
+          <div className="absolute inset-x-0 top-0 h-[300px] [background-image:linear-gradient(to_right,rgba(33,63,62,0.24)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.20)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_62%_74%_at_50%_0%,black_44%,transparent_92%)]" />
         </div>
          {/* Animated floating stars */}
 				{STARS.map((s, i) => (
@@ -65,26 +65,37 @@ export default function ContactPage() {
 				))}
 
         <div className="mx-auto max-w-[980px] text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#1f4f4a] bg-[#0a1515]/90 px-4 py-1.5 text-[12px] font-medium text-[#a3d4cb] shadow-[inset_0_0_0_1px_rgba(35,120,108,0.25)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#2a6d66] bg-[#0d1a19]/92 px-4 py-1.5 text-[12px] font-medium text-[#b4e3da] shadow-[inset_0_0_0_1px_rgba(35,120,108,0.38),0_8px_24px_rgba(0,0,0,0.3)]">
             <span className="h-2 w-2 rounded-full bg-[#20d0bb] shadow-[0_0_12px_rgba(32,208,187,0.95)]" />
             Support Available 24/7
           </div>
 
-          <h1 className="mt-5 text-[44px] font-medium leading-[1.08] tracking-[-0.025em] text-white sm:text-[62px]">
+          <h1 className="mt-5 text-[44px] font-medium leading-[1.08] tracking-[-0.028em] text-white sm:text-[62px]">
             Get In Touch
           </h1>
 
-          <p className="mx-auto mt-4 max-w-[760px] text-[14px] leading-[1.6] text-[#8d9b9a] sm:text-[15px]">
+          <p className="mx-auto mt-4 max-w-[760px] text-[14px] leading-[1.65] text-[#96a6a4] sm:text-[15px]">
             If you have questions about our AI systems or want to explore how they fit your
             business, use the form below. Share a few details, and we&apos;ll guide you on the
             next steps.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 w-full max-w-[860px] rounded-[20px] border border-[#163634] bg-[#050607]/95 p-4 shadow-[0_0_0_1px_rgba(16,53,48,0.42),0_30px_90px_rgba(0,0,0,0.65)] sm:p-7 lg:p-8">
+        <div className="mx-auto mt-12 w-full max-w-[860px] rounded-[18px] px-7 py-8"
+			style={{
+				background: "linear-gradient(180deg, rgba(13,107,97,0.20) 0%, #0a0a0a 35%, #0a0a0a 100%), linear-gradient(to left, rgba(27,168,154,0.15) 0%, transparent 40%)",
+				border: "1px solid rgba(45,228,207,0.14)",
+				boxShadow:
+					"inset -20px 0 40px rgba(27,168,154,0.08), 0 8px 32px rgba(0,0,0,0.45)",
+			}}
+		>
+			<div className="flex items-center gap-3 mb-6">
+				
+			
+			</div>
           <form className="space-y-4" action="#" method="post">
             <div>
-              <label htmlFor="fullName" className="mb-2 block text-[12px] font-medium text-[#a9b8b8]">
+              <label htmlFor="fullName" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
                 Full Name
               </label>
               <input
@@ -92,13 +103,13 @@ export default function ContactPage() {
                 name="fullName"
                 type="text"
                 placeholder="Enter Name"
-                className="h-11 w-full rounded-[7px] border border-[#242b2d] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#6e787d] outline-none transition focus:border-[#26ceb5]"
+                className="h-11 w-full rounded-[7px] border border-[#273235] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#728086] outline-none transition focus:border-[#2dd8be] focus:shadow-[0_0_0_3px_rgba(45,216,190,0.16)]"
               />
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label htmlFor="email" className="mb-2 block text-[12px] font-medium text-[#a9b8b8]">
+                <label htmlFor="email" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
                   Email Address
                 </label>
                 <input
@@ -106,12 +117,12 @@ export default function ContactPage() {
                   name="email"
                   type="email"
                   placeholder="Enter Email"
-                  className="h-11 w-full rounded-[7px] border border-[#242b2d] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#6e787d] outline-none transition focus:border-[#26ceb5]"
+                  className="h-11 w-full rounded-[7px] border border-[#273235] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#728086] outline-none transition focus:border-[#2dd8be] focus:shadow-[0_0_0_3px_rgba(45,216,190,0.16)]"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="mb-2 block text-[12px] font-medium text-[#a9b8b8]">
+                <label htmlFor="phone" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
                   Phone Number
                 </label>
                 <input
@@ -119,20 +130,20 @@ export default function ContactPage() {
                   name="phone"
                   type="tel"
                   placeholder="Enter Number"
-                  className="h-11 w-full rounded-[7px] border border-[#242b2d] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#6e787d] outline-none transition focus:border-[#26ceb5]"
+                  className="h-11 w-full rounded-[7px] border border-[#273235] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#728086] outline-none transition focus:border-[#2dd8be] focus:shadow-[0_0_0_3px_rgba(45,216,190,0.16)]"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="helpTopic" className="mb-2 block text-[12px] font-medium text-[#a9b8b8]">
+              <label htmlFor="helpTopic" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
                 How can we help you?
               </label>
               <CustomSelect id="helpTopic" name="helpTopic" defaultValue="Select" options={supportOptions} />
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-[12px] font-medium text-[#a9b8b8]">
+              <label htmlFor="message" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
                 Your Message
               </label>
               <textarea
@@ -140,18 +151,20 @@ export default function ContactPage() {
                 name="message"
                 rows={9}
                 placeholder="Enter Message here"
-                className="w-full resize-y rounded-[7px] border border-[#242b2d] bg-[#0b0f11] px-4 py-3 text-[14px] text-white placeholder:text-[#6e787d] outline-none transition focus:border-[#26ceb5]"
+                className="w-full resize-y rounded-[7px] border border-[#273235] bg-[#0b0f11] px-4 py-3 text-[14px] text-white placeholder:text-[#728086] outline-none transition focus:border-[#2dd8be] focus:shadow-[0_0_0_3px_rgba(45,216,190,0.16)]"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-[8px] bg-[#00C19C] text-[15px] font-semibold text-[#e9ffff] transition hover:bg-[#1cc3af]"
+              className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-[8px] bg-[linear-gradient(180deg,#19d2b6_0%,#00b895_100%)] text-[15px] font-semibold text-[#ecffff] shadow-[0_10px_26px_rgba(0,184,149,0.35)] transition hover:brightness-110"
             >
               Lets Connect
-              <span aria-hidden="true" className="text-base leading-none">
-                -&gt;
-              </span>
+              <svg viewBox="0 0 20 20" className="h-5 w-8 fill-none stroke-current stroke-[3]" aria-hidden="true">
+								<path d="M4 10H16" />
+								<path d="M11 5L16 10L11 15" />
+							</svg>
+            
             </button>
           </form>
         </div>
