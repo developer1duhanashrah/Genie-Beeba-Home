@@ -40,11 +40,11 @@ export default function Genie() {
 						</div>
 
 						<h3 className="mt-6 text-[2.9rem] font-semibold tracking-[0.01em] text-[#00C19C]">GENIE</h3>
-						<p className="mt-4 max-w-[560px] text-[0.98rem] sm:text-[1.07rem] leading-[1.65] text-white/82">
+						<p className="mt-4 max-w-[650px] text-[0.98rem] sm:text-[1.3rem] leading-[1.65] text-white/82">
 							Genie, provides a human-like voice to independently handle unlimited calls, 24/7. It
 							excels at autonomous lead qualification, appointment scheduling, and customer support,
 							integrating directly with your CRM to ensure every opportunity is captured, even while
-							you are away
+							you are away.
 						</p>
 
 						<button

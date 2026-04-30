@@ -97,7 +97,7 @@ export default function Header() {
 						<p className="text-[9px] md:text-[13px] tracking-[0.01em] text-white/50">Boost Efficiency</p>
 						<p className="mt-1 sm:mt-2 text-[26px] sm:text-[42px] font-semibold leading-none tracking-[-0.02em] text-white">90%</p>
 						<p className="mt-2 sm:mt-3 text-[8px] md:text-[13px] leading-[1.25] text-white/40">
-							Improvement of efficiency with
+							Improvement in efficiency with
 							<br />
 							our autonomous digital operators
 						</p>

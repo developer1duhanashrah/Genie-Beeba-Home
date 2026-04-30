@@ -210,8 +210,8 @@ export default function LoginNavbar() {
           : "relative"
       }`}>
       <header className="">
-        <div className="flex h-[72px] w-full items-center justify-between px-4 sm:px-6 lg:px-20 py-5">
-          <Link href="/" className=" mt-5 mb-5 drag-none items-center">
+        <div className="flex h-[85px] w-full items-center justify-between px-4 sm:px-6 lg:px-20 ">
+          <Link href="/" className="  drag-none items-center">
           
                       <Image
                         src="/images/logoHeader.png"
@@ -264,7 +264,7 @@ export default function LoginNavbar() {
                 </svg>
               </button>
               {dropdownOpen && (
-                <div className="absolute left-0 top-full z-50 mt-1 min-w-[140px] border border-white/10 bg-black py-1 shadow-lg">
+                <div className="absolute cursor-pointer left-0 top-full z-50 mt-1 min-w-[140px] border border-white/10 bg-black py-1 shadow-lg">
                   {aiEmployeeDropdown.map((item) => (
                     <Link
                       key={item.label}
@@ -299,7 +299,7 @@ export default function LoginNavbar() {
             {/* Desktop login */}
             <button
               type="button"
-              className="hidden md:block rounded-full bg-[#00C19C] px-8 py-2 text-base font-semibold text-white shadow-[0_5px_16px_rgba(2,186,173,0.30)] transition-transform hover:scale-[1.02]"
+              className="hidden md:block rounded-full bg-[#00C19C] cursor-pointer px-9 py-3 text-base font-semibold text-white shadow-[0_5px_16px_rgba(2,186,173,0.30)] transition-transform hover:scale-[1.02]"
             >
               Login
             </button>
@@ -309,7 +309,7 @@ export default function LoginNavbar() {
               type="button"
               onClick={() => setDrawerOpen(true)}
               aria-label="Open menu"
-              className="flex md:hidden items-center justify-center rounded-md p-2 text-white/70 hover:text-white focus:outline-none"
+              className="flex md:hidden items-center justify-center rounded-md p-3 text-white/70 hover:text-white focus:outline-none"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current stroke-2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -320,7 +320,7 @@ export default function LoginNavbar() {
 
          <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[72px] bg-[radial-gradient(circle_at_center,_rgba(6,188,170,0.30),_transparent_64%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[85px] bg-[radial-gradient(circle_at_center,_rgba(6,188,170,0.30),_transparent_64%)]"
         /> 
       </header>
 

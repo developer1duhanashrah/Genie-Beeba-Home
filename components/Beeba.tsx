@@ -4,8 +4,8 @@ export default function Beeba() {
 	return (
 	<section className="relative mt-8 sm:mt-10 px-4 sm:px-6 lg:px-20 lg:mx-10">
 		<div className="relative">
-			<div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-					<div className="relative w-full">
+			<div className="grid gap-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
+					<div className="relative  md:max-w-[530px]">
 											<div className="rounded-2xl border border-white/18 bg-[#1a2527] p-[1px]">
 												<div className="relative h-[350px] overflow-hidden rounded-[15px] bg-[radial-gradient(ellipse_at_top_right,rgba(168,255,243,0.38)_0%,rgba(74,192,170,0.22)_30%,rgba(34,71,70,0.85)_62%,rgba(26,34,40,1)_100%),linear-gradient(112deg,#232c33_0%,#2d5c57_48%,#35b8a1_100%)]">
 													<Image
@@ -30,10 +30,8 @@ export default function Beeba() {
 						</div>
 
 					<h3 className="mt-6 text-[1.8rem] sm:text-[2.35rem] font-semibold tracking-[0.02em] text-[#00C19C]">BEEBA</h3>
-					<p className="mt-4 max-w-xl text-[0.92rem] sm:text-[1.07rem] leading-[1.75] text-white/78">
-							Move from the content grind to a fully autonomous operation. Our Autonomous Agent
-							Beeba executes everything from deep market analysis and strategic planning to content
-							creation and multi-platform scheduling, all tailored to your unique brand voice
+					<p className="max-w-[730px] text-[0.98rem] sm:text-[1.3rem] leading-[1.65] text-white/82">
+						Move from the content grind to a fully autonomous operation. Our Autonomous Agent Beeba executes everything from deep market analysis and strategic planning to content creation and multi-platform scheduling, all tailored to your unique brand voice.
 						</p>
 
 						<button
