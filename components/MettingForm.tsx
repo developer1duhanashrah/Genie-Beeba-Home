@@ -12,9 +12,9 @@ export default function MettingForm() {
 							Less Heavy Each Day?
 						</h2>
 
-						<p className="mx-auto mt-5 max-w-[620px] text-[15px] leading-[1.45] text-[#8d9399]">
+						<p className="mx-auto mt-5 text-[15px] leading-[1.45] text-[#8d9399]">
 							If daily operations are taking too much of your time, it may be time for a
-							system that works quietly in the background. Schedule a meeting, and we&apos;ll
+							system that works quietly in the background. <br/> Schedule a meeting, and we&apos;ll
 							help identify the right setup to support your workflow more efficiently.
 						</p>
 

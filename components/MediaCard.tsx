@@ -38,7 +38,7 @@ export default function MediaCard() {
   }, []);
 
   return (
-    <section className="relative px-4 sm:px-6 lg:px-20 lg:mx-10 overflow-hidden px-4 pb-10 pt-10 sm:pb-24 sm:pt-14">
+    <section className="relative px-4 sm:px-6 lg:px-20 lg:mx-10 overflow-hidden px-4 pt-10 sm:pt-14">
       <div aria-hidden="true" className="absolute inset-0 " />
       <div className="relative">
         <div className="group relative " ref={containerRef}>

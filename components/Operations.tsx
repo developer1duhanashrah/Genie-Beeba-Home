@@ -21,12 +21,12 @@ export default function Operations() {
 		<section className="relative overflow-hidden bg-black px-4 pb-10 pt-10 sm:px-6 sm:pb-14 sm:pt-12 lg:px-20 lg:pb-16">
 			<div
 				aria-hidden="true"
-				className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(8,155,142,0.16),rgba(0,0,0,1)_58%)]"
+				className="absolute inset-0 "
 			/>
 
 			<div className="relative mx-auto max-w-[1160px]">
 				<div className="mx-auto mb-10 flex max-w-[760px] flex-col items-center text-center sm:mb-14">
-					<div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2 text-[11px] text-white/75 backdrop-blur">
+					<div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-4 py-2 text-[12px] text-white/75 backdrop-blur">
 						<span className="h-3 w-3 rounded-full bg-[#00C19C]" />
 						Business Runs Without Effort
 					</div>
@@ -47,7 +47,7 @@ export default function Operations() {
 				{operationCards.map((card) => (
 					<article
 						key={card.title}
-						className="relative overflow-hidden rounded-[18px] border border-white/[0.08] bg-[#14181e] px-6 pb-6 pt-12 shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+						className="relative overflow-hidden rounded-[18px] border border-white/[0.08] bg-[#14181e] px-6 pb-6 pt-25 shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
 					>
 						<div
 							aria-hidden="true"

@@ -50,10 +50,13 @@ export default function Header() {
 						<span className="text-[14px]">Your Operations Autonomously Executed </span>
 					</div>
 
-					<h1 className="mt-8 max-w-4xl text-balance text-[1.7rem] font-medium leading-[1.12] tracking-[-0.03em] text-white sm:text-[2.8rem] lg:text-[3.95rem]">
+					<h1 className="mt-6 text-balance text-[1.8rem] font-medium leading-[1.12] text-white md:text-[3.5rem]">
 						Autonomous AI Systems
+
 						<br />
 						for Business Growth
+					
+
 					<span className="star-animate ml-2 inline-flex align-middle text-[#00C19C] h-7 w-7 sm:h-8 sm:w-8" style={{ animationDuration: "4.5s", animationDelay: "1.2s" }}>
 						<StarIcon />
 						</span>
@@ -61,6 +64,7 @@ export default function Header() {
 
 					<p className="mt-4 sm:mt-6 max-w-3xl text-xs leading-relaxed text-white/55 sm:text-xl sm:leading-[1.45]">
 						Run calls, follow-ups and daily workflows without constant manual work.
+						<br />
 						Designed for Leaders, Entrepreneurs and Business Owners
 					</p>
 
@@ -90,27 +94,27 @@ export default function Header() {
 						style={{ left: "66.666%" }}
 					/>
 					<div className="sm:pr-8">
-						<p className="text-[9px] sm:text-[10px] tracking-[0.01em] text-white/45">Boost Efficiency</p>
+						<p className="text-[9px] md:text-[13px] tracking-[0.01em] text-white/50">Boost Efficiency</p>
 						<p className="mt-1 sm:mt-2 text-[26px] sm:text-[42px] font-semibold leading-none tracking-[-0.02em] text-white">90%</p>
-						<p className="mt-2 sm:mt-3 text-[8px] sm:text-[10px] leading-[1.25] text-white/30">
+						<p className="mt-2 sm:mt-3 text-[8px] md:text-[13px] leading-[1.25] text-white/40">
 							Improvement of efficiency with
 							<br />
 							our autonomous digital operators
 						</p>
 					</div>
 					<div className="sm:px-8">
-						<p className="text-[9px] sm:text-[10px] tracking-[0.01em] text-white/45">Trusted by</p>
+						<p className="text-[9px] md:text-[13px] tracking-[0.01em] text-white/50">Trusted by</p>
 						<p className="mt-1 sm:mt-2 text-[26px] sm:text-[42px] font-semibold leading-none tracking-[-0.02em] text-white">200+</p>
-						<p className="mt-2 sm:mt-3 text-[8px] sm:text-[10px] leading-[1.25] text-white/30">
+						<p className="mt-2 sm:mt-3 text-[8px] md:text-[13px] leading-[1.25] text-white/40">
 							Businesses and entrepreneurs
 							<br />
 							worldwide
 						</p>
 					</div>
 					<div className="sm:pl-8">
-						<p className="text-[9px] sm:text-[10px] tracking-[0.01em] text-white/45">Experience</p>
+						<p className="text-[9px] md:text-[13px] tracking-[0.01em] text-white/50">Experience</p>
 						<p className="mt-1 sm:mt-2 text-[26px] sm:text-[42px] font-semibold leading-none tracking-[-0.02em] text-white">20+</p>
-						<p className="mt-2 sm:mt-3 text-[8px] sm:text-[10px] leading-[1.25] text-white/30">
+						<p className="mt-2 sm:mt-3 text-[8px] md:text-[13px] leading-[1.25] text-white/40">
 							Years serving clients with
 							<br />
 							innovation and integrity

@@ -53,13 +53,13 @@ function MobileDrawer({
       {/* Drawer panel */}
       <div className="fixed inset-y-0 right-0 z-50 flex w-72 flex-col bg-black border-l border-white/10 shadow-2xl">
         {/* Drawer header */}
-        <div className="flex h-20 items-center justify-between px-6 border-b border-white/10">
+        <div className="flex h-20 items-center justify-between px-6 border-b border-white/10 ">
           <Image
             src="/logo.png"
             alt="DNAi - Duha Nashrah"
             width={136}
             height={56}
-            className="h-auto w-[110px]"
+            className="h-auto w-[110px] "
           />
           <button
             type="button"
@@ -204,22 +204,23 @@ export default function LoginNavbar() {
   }, [isSticky]);
 
   return (
-    <>
-      <header className={`w-full border-y border-white/10 bg-black transition-all duration-300 ${
+    <div className={`w-full border-y border-white/10 bg-black transition-all duration-300 ${
         isSticky 
           ? "fixed top-0 left-0 right-0 z-[100] shadow-2xl backdrop-blur-lg bg-black/95 border-b-2 border-[#00C19C]/50" 
           : "relative"
       }`}>
-        <div className="flex h-[72px] w-full items-center justify-between px-4 sm:px-6 lg:px-25">
-          <Link href="/" className="shrink-0">
-            <Image
-              src="/logo.png"
-              alt="DNAi - Duha Nashrah"
-              width={170}
-              height={70}
-              priority
-              className="h-auto w-[126px] sm:w-[140px]"
-            />
+      <header className="">
+        <div className="flex h-[72px] w-full items-center justify-between px-4 sm:px-6 lg:px-20 py-5">
+          <Link href="/" className=" mt-5 mb-5 drag-none items-center">
+          
+                      <Image
+                        src="/images/logoHeader.png"
+                        alt="DNAi Duha Nashrah"
+                        width={180}
+                        height={100}
+                        className="pt-10 pb-10 drag-none"
+                      />
+                  
           </Link>
 
           {/* Desktop nav */}
@@ -329,6 +330,6 @@ export default function LoginNavbar() {
         onClose={() => setDrawerOpen(false)}
         pathname={pathname}
       />
-    </>
+    </div>
   );
 }

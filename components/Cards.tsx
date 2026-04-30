@@ -36,7 +36,7 @@ export default function Cards() {
 		<section className="relative overflow-hidden pb-16 pt-10 sm:pb-24 sm:pt-12">
             <div
                             aria-hidden="true"
-                            className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(8,155,142,0.18),rgba(0,0,0,1)_60%)]"
+                            className="absolute inset-0 "
                         />
             
                         <div className="relative mb-10">
@@ -73,7 +73,7 @@ export default function Cards() {
 								alt={item.title}
 								fill
 								sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-								className={`object-cover object-center transition-transform duration-300 ${item.imageClassName}`}
+								className={`object-cover object-center drag-none transition-transform duration-300 ${item.imageClassName}`}
 							/>
 							<div
 								aria-hidden="true"

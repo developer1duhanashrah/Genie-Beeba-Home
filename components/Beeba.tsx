@@ -5,26 +5,26 @@ export default function Beeba() {
 	<section className="relative mt-8 sm:mt-10 px-4 sm:px-6 lg:px-20 lg:mx-10">
 		<div className="relative">
 			<div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14">
-					<div className="relative w-full order-2 lg:order-1">
-						<div className="rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(53,88,92,0.48),rgba(28,219,188,0.52))]">
-							<div className="relative h-[300px] overflow-hidden rounded-[14px] bg-[radial-gradient(ellipse_at_top_right,rgba(175,255,246,0.42),rgba(28,214,190,0.45)_45%,rgba(15,41,45,0.55)_100%)]">
-								<Image
-									src="/beeba.png"
-									alt="Beeba"
-									fill
-									priority
-									className="object-contain "
-								/>
-							</div>
-						</div>
-					</div>
+					<div className="relative w-full">
+											<div className="rounded-2xl border border-white/18 bg-[#1a2527] p-[1px]">
+												<div className="relative h-[350px] overflow-hidden rounded-[15px] bg-[radial-gradient(ellipse_at_top_right,rgba(168,255,243,0.38)_0%,rgba(74,192,170,0.22)_30%,rgba(34,71,70,0.85)_62%,rgba(26,34,40,1)_100%),linear-gradient(112deg,#232c33_0%,#2d5c57_48%,#35b8a1_100%)]">
+													<Image
+														src="/beebaHome.png"
+														alt="Beeba"
+														fill
+														priority
+														className="transition-transform drag-none"
+													/>
+												</div>
+											</div>
+										</div>
 
 					<div className="order-1 lg:order-2">
-						<div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 p-1 text-xs text-white/70">
-							<button type="button" className="rounded-full bg-white/[0.08] px-5 py-2">
+						<div className="inline-flex gap-4">
+							<button type="button" className="rounded-full bg-white/[0.08] px-5 py-2 items-center rounded-full border border-white/15 bg-white/5 p-1 text-xs text-white/70">
 								Brand Management
 							</button>
-							<button type="button" className="px-5 py-2">
+							<button type="button" className="rounded-full bg-white/[0.08] px-5 py-2 items-center rounded-full border border-white/15 bg-white/5 p-1 text-xs text-white/70">
 								Social Intelligence
 							</button>
 						</div>
@@ -41,7 +41,10 @@ export default function Beeba() {
 							className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-3 text-sm font-semibold tracking-[0.03em] text-black transition-transform hover:scale-[1.02]"
 						>
 							MEET BEEBA
-							<span aria-hidden="true" className="text-base leading-none">-&gt;</span>
+							<svg viewBox="0 0 20 20" className="h-6 w-6 fill-none stroke-current stroke-[2]" aria-hidden="true">
+								<path d="M4 10H16" />
+								<path d="M11 5L16 10L11 15" />
+							</svg>
 						</button>
 					</div>
 				</div>
