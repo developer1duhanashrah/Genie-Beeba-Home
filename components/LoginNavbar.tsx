@@ -204,7 +204,7 @@ export default function LoginNavbar() {
   }, [isSticky]);
 
   return (
-    <div className={`w-full border-y border-white/10 bg-black transition-all duration-300 ${
+    <div className={`sticky top-0 z-50 w-full backdrop-blur-md border-y border-white/10 bg-black transition-all duration-300 ${
         isSticky 
           ? "fixed top-0 left-0 right-0 z-[100] shadow-2xl backdrop-blur-lg bg-black/95 border-b-2 border-[#00C19C]/50" 
           : "relative"

@@ -9,6 +9,7 @@ import RealResults from "@/components/GenieComponents/RealResults";
 import ReadyToDeploy from "@/components/GenieComponents/ReadyToDeploy";
 import GenieFAQ from "@/components/GenieComponents/GenieFAQ";
 import FrequentlyQuestions from "@/components/FrequentlyQuestions";
+import GeniePricing from "@/components/GenieComponents/GeniePricing";
 
 
 export const metadata = {
@@ -21,16 +22,17 @@ export default function BeebaPage() {
 	return (
 		<div className=" bg-black text-white">
 			<TurnMissedCalls/>
-        <CAptureEveryOpertunity/>
-        <EveryUnAnsweredCall/>
+            <GeniePricing />
+           <CAptureEveryOpertunity/>
+           <EveryUnAnsweredCall/>
         {/* <AgenticAiVoice /> replaced with component Capture EVery opertunity starting today */} 
-        <SeeHowGenie/>
-        <HowGenieTransforms />
-        <FromCallToAppointment/>
-        <HowGenieIsDeployed/>
-        <RealResults/>
-        <ReadyToDeploy/>
-        <FrequentlyQuestions/>
+          <SeeHowGenie/>
+          <HowGenieTransforms />
+          <FromCallToAppointment/>
+          <HowGenieIsDeployed/>
+          <RealResults/>
+          <ReadyToDeploy/>
+          <FrequentlyQuestions/>
 			
 		</div>
 	);
