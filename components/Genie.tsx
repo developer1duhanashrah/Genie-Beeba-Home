@@ -7,10 +7,10 @@ export default function Genie() {
 				aria-hidden="true"
 				className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(8,155,142,0.18),rgba(0,0,0,1)_62%)]"
 			/>
-			<div
+			 <div
 				aria-hidden="true"
 				className="absolute inset-x-0 top-0 h-[280px] [background-image:linear-gradient(to_right,rgba(33,63,62,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_62%_74%_at_50%_0%,black_44%,transparent_92%)]"
-			/>
+			/>  
 
 			<div className="relative pt-20">
 				{/* Section heading */}

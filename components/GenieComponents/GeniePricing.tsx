@@ -3,11 +3,11 @@ import { CheckIcon, XIcon, SquareCheckBig } from 'lucide-react';
 import Image from 'next/image';
 
 function Check() {
-  return <SquareCheckBig className="mx-auto h-6 w-6 text-[#00c39c] stroke-[2.5]" aria-hidden="true" />;
+  return <SquareCheckBig className="mx-auto h-5 w-5 md:h-6 md:w-6 text-[#00c39c] stroke-[2.5]" aria-hidden="true" />;
 }
 
 function Cross() {
-  return <XIcon className="mx-auto h-6 w-6 text-red-500 stroke-[2.5]" aria-hidden="true" />;
+  return <XIcon className="mx-auto h-5 w-5 md:h-6 md:w-6 text-red-500 stroke-[2.5]" aria-hidden="true" />;
 }
 
 
@@ -32,7 +32,10 @@ export default function GeniePricing() {
           </div>
 
           <div className="relative mx-auto overflow-hidden rounded-sm  border border-white/10 ">
-            <div className="grid grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] gap-5 text-sm font-bold uppercase tracking-[0.24em] text-black">
+            {/* Desktop / large: table layout */}
+            <div className="hidden md:block">
+              <div className="overflow-x-auto">
+                <div className="grid md:grid-cols-[minmax(160px,1fr)_repeat(3,minmax(120px,1fr))] lg:grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] gap-5 text-sm font-bold uppercase tracking-[0.24em] text-black">
               <div className="bg-[#00c39c] px-6 py-4 text-left">Feature / Capability</div>
               {tiers.map((tier) => (
                 <div key={tier.id} className="relative border-l border-white/10 bg-[#00c39c] px-6 py-4 text-center">
@@ -44,13 +47,50 @@ export default function GeniePricing() {
                   <div className="text-base tracking-[0.24em]">{tier.name}</div>
                 </div>
               ))}
+              </div>
             </div>
 
-            <div className="divide-y divide-white/10 px-4 py-4 sm:px-6">
+            {/* Mobile: stacked tier cards grouped by section */}
+            <div className="md:hidden px-2">
+              {tiers.map((tier) => (
+                <div key={tier.id} className="mb-4 rounded-lg border border-white/8 bg-[#071918] p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="font-bold text-white">{tier.name}</div>
+                    <div className="text-sm text-white">{tier.price}{tier.unit}</div>
+                  </div>
+                  <div className="space-y-3">
+                    {sections.map((section) => (
+                      <div key={section.name}>
+                        <div className="mb-2 text-xs font-semibold uppercase text-[#9decdc]">{section.name}</div>
+                        <div className="space-y-2">
+                          {section.features.map((feature) => {
+                            const value = feature.tiers[tier.name as keyof typeof feature.tiers];
+                            return (
+                              <div key={feature.name} className="flex items-center justify-between">
+                                <div className="text-sm text-white/90 max-w-[65%] truncate">{feature.name}</div>
+                                <div className="ml-3">
+                                  {typeof value === 'boolean' ? (
+                                    value ? <Check /> : <Cross />
+                                  ) : (
+                                    <span className="text-sm font-semibold text-white">{value}</span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden md:block divide-y divide-white/10 px-4 py-4 sm:px-6">
               {rows.map((feature, index) => (
                 <div
                   key={feature.name}
-                  className={`grid grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] items-center gap-2 py-4 text-sm sm:gap-4 `}
+                  className={`grid md:grid-cols-[minmax(160px,1fr)_repeat(3,minmax(120px,1fr))] lg:grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] items-center gap-2 py-4 text-sm sm:gap-4 `}
                 >
                   <div className="font-medium text-white">{feature.name}</div>
                   {tiers.map((tier) => {
@@ -73,7 +113,7 @@ export default function GeniePricing() {
               ))}
             </div>
 
-            <div className="grid grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] border-t border-white/10 px-4 py-6 text-sm font-black uppercase tracking-[0.24em] sm:px-6">
+            <div className="hidden md:grid md:grid-cols-[minmax(200px,1fr)_repeat(3,minmax(150px,1fr))] lg:grid-cols-[minmax(260px,1fr)_repeat(3,minmax(190px,1fr))] border-t border-white/10 px-4 py-6 text-sm font-black uppercase tracking-[0.24em] sm:px-6">
               <div className="text-left text-[#baf3e7]">Price / Month</div>
               {tiers.map((tier) => (
                 <div key={tier.id} className="border-l border-white/10 px-2 text-white text-center flex justify-center">
@@ -88,9 +128,9 @@ export default function GeniePricing() {
             Additional Minutes will be charged separately.
           </div>
         </div>
-      </div>
+        </div>
+    </div>
+      </section>
 
-     
-    </section>
   );
 }

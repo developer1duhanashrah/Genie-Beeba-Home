@@ -31,27 +31,28 @@ import CustomSelect from "../../components/CustomSelect";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#040708] text-white">
-      <style>{`
-        #helpTopic option:hover {
-          background-color: #00C19C !important;
-          color: white !important;
-        }
-        #helpTopic option:checked {
-          background-color: #00C19C !important;
-          color: white !important;
-        }
-        #helpTopic option {
-          background-color: #0b0f11;
-          color: #8f999f;
-        }
-      `}</style>
-      <section className="relative isolate overflow-hidden px-4 pb-20 pt-14 sm:px-6 sm:pt-20 lg:px-8">
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_6%,rgba(0,207,177,0.34)_0%,rgba(0,207,177,0.12)_25%,rgba(0,207,177,0.04)_44%,rgba(4,7,8,1)_70%)]" />
-          <div className="absolute left-1/2 top-[150px] h-[320px] w-[920px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(0,224,190,0.20)_0%,rgba(0,224,190,0)_72%)] blur-3xl" />
-          <div className="absolute inset-x-0 top-0 h-[300px] [background-image:linear-gradient(to_right,rgba(33,63,62,0.24)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.20)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_62%_74%_at_50%_0%,black_44%,transparent_92%)]" />
-        </div>
+    <main className="min-h-screen bg-black text-white px-4 sm:px-6 lg:px-30">
+      <div className="bg-[radial-gradient(circle,rgba(0,224,190,0.20)_0%,rgba(0,224,190,0)_72%)]">
+ 
+      <section className="relative isolate overflow-hidden px-4 pb-20 pt-4 sm:px-6 sm:pt-20 lg:px-8">
+        
+         <div
+					aria-hidden="true"
+					className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(3,176,162,0.32),rgba(0,0,0,0.96)_62%)]"
+				/> 
+			 <div
+					aria-hidden="true"
+					className="absolute inset-x-0 top-0 -z-10 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent"
+				/> 
+        {/* <div
+				aria-hidden="true"
+				className="absolute inset-x-0 top-0 h-[280px] [background-image:linear-gradient(to_right,rgba(33,63,62,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_62%_74%_at_50%_0%,black_44%,transparent_92%)]"
+			/>  
+    */}
+        
+				
+          
+      
          {/* Animated floating stars */}
 				{STARS.map((s, i) => (
 					<span
@@ -64,40 +65,48 @@ export default function ContactPage() {
 					</span>
 				))}
 
-        <div className="mx-auto max-w-[980px] text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2a6d66] bg-[#0d1a19]/92 px-4 py-1.5 text-[12px] font-medium text-[#b4e3da] shadow-[inset_0_0_0_1px_rgba(35,120,108,0.38),0_8px_24px_rgba(0,0,0,0.3)]">
-            <span className="h-2 w-2 rounded-full bg-[#20d0bb] shadow-[0_0_12px_rgba(32,208,187,0.95)]" />
+        <div
+          className="mx-auto max-w-[980px] text-center px-2 sm:px-6"
+          style={{
+            background: 'radial-gradient(circle at 50% 36%, rgba(6,188,170,0.06) 0%, rgba(6,188,170,0.03) 12%, transparent 48%)',
+          }}
+        >
+         
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#2a6d66] bg-[#013732] px-4 py-2 text-[14px] font-medium text-[#b4e3da] shadow-[inset_0_0_0_1px_rgba(35,120,108,0.38),0_8px_24px_rgba(0,0,0,0.3)]">
+            <span className="h-3 w-3 rounded-full bg-[#20d0bb] shadow-[0_0_12px_rgba(32,208,187,0.95)]" />
             Support Available 24/7
           </div>
 
-          <h1 className="mt-5 text-[44px] font-medium leading-[1.08] tracking-[-0.028em] text-white sm:text-[62px]">
+          <h1 className="mt-5 text-[36px] sm:text-[52px] md:text-[76px] lg:text-[86px] font-medium leading-[1.02] tracking-[-0.02em] text-white drop-shadow-[0_10px_40px_rgba(6,188,170,0.08)]">
             Get In Touch
           </h1>
 
-          <p className="mx-auto mt-4 max-w-[760px] text-[14px] leading-[1.65] text-[#96a6a4] sm:text-[15px]">
-            If you have questions about our AI systems or want to explore how they fit your
-            business, use the form below. Share a few details, and we&apos;ll guide you on the
-            next steps.
-          </p>
-        </div>
+          <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-[1.65] text-[#93a39f] md:text-[19px]">
+           If you have questions about our AI systems or want to explore how they fit your business, use the form below. Share a few details, and we’ll guide you on the next steps.
 
-        <div className="mx-auto mt-12 w-full max-w-[860px] rounded-[18px] px-7 py-8"
-			style={{
-				background: "linear-gradient(180deg, rgba(13,107,97,0.20) 0%, #0a0a0a 35%, #0a0a0a 100%), linear-gradient(to left, rgba(27,168,154,0.15) 0%, transparent 40%)",
-				border: "1px solid rgba(45,228,207,0.14)",
-				boxShadow:
-					"inset -20px 0 40px rgba(27,168,154,0.08), 0 8px 32px rgba(0,0,0,0.45)",
-			}}
-		>
-			<div className="flex items-center gap-3 mb-6">
-				
-			
-			</div>
-          <form className="space-y-4" action="#" method="post">
-            <div>
-              <label htmlFor="fullName" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
-                Full Name
-              </label>
+          </p>
+       <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-[800px] -z-10 pointer-events-none [background-image:linear-gradient(to_right,rgba(33,63,62,0.42)_1px,transparent_1px),linear-gradient(to_bottom,rgba(33,63,62,0.32)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_62%_74%_at_50%_0%,black_56%,transparent_96%)]"
+              />  
+        </div>
+         
+        <div className="mx-auto mt-12 w-full max-w-[860px] rounded-[18px] px-4 sm:px-7 py-8 relative overflow-hidden">
+          {/* Decorative boxes background (subtle, non-interactive) - hidden on small screens */}
+          <div
+            aria-hidden="true"
+            className="hidden md:block pointer-events-none absolute right-6 top-6 bottom-6 w-1/2 opacity-60 z-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(33,63,62,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(33,63,62,0.06) 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+            }}
+          />
+          <form className="space-y-4 bg-black px-4 sm:px-5 py-5 rounded-[18px] border border-white/10" action="#" method="post">
+           
+               <label htmlFor="email" className="mb-2 block text-[12px] font-medium text-[#adc0be]">
+                  Full Name
+                </label>
               <input
                 id="fullName"
                 name="fullName"
@@ -105,7 +114,6 @@ export default function ContactPage() {
                 placeholder="Enter Name"
                 className="h-11 w-full rounded-[7px] border border-[#273235] bg-[#0b0f11] px-4 text-[14px] text-white placeholder:text-[#728086] outline-none transition focus:border-[#2dd8be] focus:shadow-[0_0_0_3px_rgba(45,216,190,0.16)]"
               />
-            </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -160,7 +168,7 @@ export default function ContactPage() {
               className="mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-[8px] bg-[linear-gradient(180deg,#19d2b6_0%,#00b895_100%)] text-[15px] font-semibold text-[#ecffff] shadow-[0_10px_26px_rgba(0,184,149,0.35)] transition hover:brightness-110"
             >
               Lets Connect
-              <svg viewBox="0 0 20 20" className="h-5 w-8 fill-none stroke-current stroke-[3]" aria-hidden="true">
+              <svg viewBox="0 0 20 20" className="h-6 w-8 fill-none stroke-current stroke-[3]" aria-hidden="true">
 								<path d="M4 10H16" />
 								<path d="M11 5L16 10L11 15" />
 							</svg>
@@ -169,6 +177,8 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
+    </div>
+     
     </main>
   );
 }

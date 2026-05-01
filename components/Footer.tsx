@@ -30,9 +30,9 @@ function SocialIcon({ label, children }: { label: string; children: React.ReactN
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
 	return (
-		<div>
+		<div className="flex flex-col gap-4">
 			<h3 className="text-[13px] sm:text-[15px] font-semibold uppercase tracking-[-0.01em] text-white mb-2">{title}</h3>
-			<div className="flex flex-col gap-3 sm:gap-5 text-[13px] sm:text-[15px] text-white/86">
+			<div className="flex flex-col gap-3 sm:gap-8 text-[13px] sm:text-[15px] text-white/86">
 				{links.map((link) => (
 					<Link key={link.label} href={link.href} className="leading-none transition-colors hover:text-white">
 						{link.label}
@@ -45,8 +45,9 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
 
 export default function Footer() {
 	return (
-		<footer className="relative bg-[#050D0B] pt-8 pb-3 sm:pb-2 ">
-			<div
+		<footer className="md:px-25 bg-black">
+			<div className=" relative bg-[#050D0B] pt-8 pb-3 sm:pb-2">
+            <div
 				aria-hidden="true"
 				className="absolute inset-0"
 				style={{
@@ -68,13 +69,13 @@ export default function Footer() {
 					<div className="px-5">
                        <div className="flex flex-col gap-8 lg:flex-row lg:justify-between">
 						<div>
-                           <p className="mt-1 text-[13px] sm:text-[14px] leading-[1.45] text-white/90 lg:leading-[1.35]">
+                           <p className="mt-1 text-[13px] sm:text-[14px] leading-[1.45] text-white/90 lg:leading-[2]">
 							DuhaNashrah (DNAI) Is An AI Automation Agency<br />
 							Inspired By The Principle Of Light After Darkness.<br />
 							We Provide Clarity And Relief To Businesses In Dubai
 						</p>
 						</div>
-					     <div className=" flex justify-between gap-1 lg:gap-20">
+					     <div className=" flex justify-between gap-1 lg:gap-25 lg:pr-5">
 	                    <FooterColumn title="COMPANY" links={companyLinks} />
 				     	<FooterColumn title="AI EMPLOYEES" links={employeeLinks} />
 				    	<FooterColumn title="SUPPORT" links={supportLinks} />
@@ -82,8 +83,24 @@ export default function Footer() {
 					</div>
 					
 					
-				   
-				<div className="border-b border-white px-5 mt-5 mb-5"></div>
+				{/* <div className="my-6 flex justify-center">
+					<div
+						className="w-full max-w-full h-[2px] rounded"
+						style={{
+							background: 'linear-gradient(90deg, rgba(238, 231, 231, 0) 0%, rgba(0,193,156,0.95) 50%, rgba(0,0,0,0) 100%)',
+							boxShadow: '0 6px 18px rgba(233, 236, 236, 0.12)',
+						}}
+					/>
+				</div> */}
+				<div className="my-6 flex justify-center">
+					<div
+						className="w-full max-w-full h-[2px] rounded"
+						style={{
+							background: 'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.95) 50%, rgba(0,0,0,0) 100%)',
+							boxShadow: '0 6px 18px rgba(255,255,255,0.08)',
+						}}
+					/>
+				</div>
 				 </div>
 				</div>
 
@@ -238,21 +255,23 @@ export default function Footer() {
 					</div>
 				</div>
 
-				 <div className="mt-10 flex flex-col gap-3 text-[12px] sm:text-[13px] text-white/60 sm:flex-row sm:items-end sm:justify-between px-5">
-					<p>Copyright © 2026 DNAI / Powered by NIKU SOLUTION PTE LTD</p>
-					<div className="flex flex-wrap gap-1.5 sm:gap-2 text-white/70 sm:justify-end">
+				 <div className="mt-10 flex flex-col gap-3 text-[10px]  text-gray-600 sm:flex-row sm:items-end sm:justify-between px-5">
+					<p>Copyright © 2026 DNAI / Powered by NIKU SOLUTION PVT LTD</p>
+					{/* <div className="flex flex-wrap gap-1.5 sm:gap-2 text-white/70 sm:justify-end">
 						{policyLinks.map((link, index) => ( 
 							
 							<div key={link.label} className="flex items-center gap-1">
-								<Link href={link.href} className="transition-colors hover:text-white/90">
+								<Link href={link.href} className="transition-colors hover:text-w">
 									{link.label}
 								</Link>
 								{index < policyLinks.length - 1 ? <span className="text-white/40">/</span> : null}
 							</div>
 						))}
-					</div>
+					</div> */}
 				</div> 
 			</div>
+			</div>
+			
 		</footer>
 	);
 }

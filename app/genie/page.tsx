@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function BeebaPage() {
 	return (
-		<div className=" bg-black text-white">
+		<div className=" bg-black text-white md:px-30">
 			<TurnMissedCalls/>
             <GeniePricing />
            <CAptureEveryOpertunity/>

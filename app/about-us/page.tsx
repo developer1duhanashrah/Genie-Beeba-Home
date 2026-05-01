@@ -267,7 +267,7 @@ function OrbitalDiagram() {
 /* ─── Page ──────────────────────────────────────────────────────────── */
 export default function AboutPage() {
 	return (
-		<main className=" bg-black text-white ">
+		<main className=" bg-black text-white lg:px-30 px-4 sm:px-6">
 
 			{/* ══ 1. HERO ══════════════════════════════════════════════════ */}
 			<section className="relative isolate overflow-hidden px-4 sm:px-6 lg:px-20 pb-24 pt-16 sm:pb-32 sm:pt-24">
