@@ -210,7 +210,7 @@ export default function LoginNavbar() {
           : "relative"
       }`}>
       <header className="">
-        <div className="flex h-[85px] w-full items-center justify-between px-4 sm:px-6 lg:px-20 ">
+        <div className="flex h-[85px] w-full items-center justify-between px-4 sm:px-6 lg:px-25">
           <Link href="/" className="  drag-none items-center">
           
                       <Image
@@ -295,7 +295,7 @@ export default function LoginNavbar() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 lg:pr-5">
             {/* Desktop login */}
             <button
               type="button"

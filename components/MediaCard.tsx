@@ -40,7 +40,7 @@ export default function MediaCard() {
   return (
     <section className="relative px-4 sm:px-6 lg:px-20 lg:mx-10 overflow-hidden px-4 pt-10 sm:pt-14">
       <div aria-hidden="true" className="absolute inset-0 " />
-      <div className="relative">
+      <div className="relative md:px-10 lg:px-30">
         <div className="group relative " ref={containerRef}>
           {/* Ellipse glow — wide outer bloom */}
           <div
